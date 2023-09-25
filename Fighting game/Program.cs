@@ -27,7 +27,7 @@ while (playerhp > 0 && enemyhp > 0)
     playerhp = Math.Max(0, playerhp);
     Console.WriteLine($"{p2} deals {dmg} damage to {p1}");
 
-    Console.WriteLine("Press enter to start new round");
+    Console.WriteLine("Press enter to start next round");
     Console.ReadLine();
 
 }
