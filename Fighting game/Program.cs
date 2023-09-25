@@ -1,26 +1,38 @@
 ﻿Console.WriteLine("P1 enter your name");
 string p1 = Console.ReadLine();
 
-// Console.WriteLine("P2 enter your name");
-// string p2 = Console.ReadLine();
+
+string p2 = "Enemy";
 
 int playerhp = 50;
 int enemyhp = 50;
 
 Random generator = new Random();
-int tal = generator.Next(1,21);
 
-Random gen = new Random();
-int dmg = gen.Next(1,21);
+
 
 
 while (playerhp > 0 && enemyhp > 0)
 {
- playerhp-=tal;
- enemyhp-=dmg;   
+    Console.WriteLine($"{p1}: {playerhp}   {p2}: {enemyhp}\n");
+
+
+    int tal = generator.Next(1,21);
+    enemyhp-=tal;
+    Console.WriteLine($"{p1} deals {tal} damage to the enemy");
+
+    int dmg = generator.Next(1,21);
+    playerhp-=dmg;
+    Console.WriteLine($"{p2} deals {dmg} damage to {p1}");
+
+    Console.WriteLine("Press enter to start new round");
+    Console.ReadLine();
+
 }
 
 
 
-Console.WriteLine("Press enter");
+
+
+Console.WriteLine("Press enter to close the game");
 Console.ReadLine();
