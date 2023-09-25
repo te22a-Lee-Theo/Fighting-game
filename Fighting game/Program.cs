@@ -14,8 +14,10 @@ Random generator = new Random();
 
 while (playerhp > 0 && enemyhp > 0)
 {
-    Console.WriteLine($"{p1}: {playerhp}hp   {p2}: {enemyhp}hp\n");
+    Console.WriteLine($"{p1}: {playerhp}hp   {p2}: {enemyhp}hp\n\n");
 
+    Console.WriteLine("Press enter to attack.");
+    Console.ReadLine();
 
     int tal = generator.Next(1,21);
     enemyhp-=tal;
@@ -25,10 +27,9 @@ while (playerhp > 0 && enemyhp > 0)
     int dmg = generator.Next(1,21);
     playerhp-=dmg;
     playerhp = Math.Max(0, playerhp);
-    Console.WriteLine($"{p2} deals {dmg} damage to {p1}");
+    Console.WriteLine($"{p2} deals {dmg} damage to {p1}\n");
 
-    Console.WriteLine("Press enter to start next round");
-    Console.ReadLine();
+    
 
 }
 
