@@ -14,15 +14,17 @@ Random generator = new Random();
 
 while (playerhp > 0 && enemyhp > 0)
 {
-    Console.WriteLine($"{p1}: {playerhp}   {p2}: {enemyhp}\n");
+    Console.WriteLine($"{p1}: {playerhp}hp   {p2}: {enemyhp}hp\n");
 
 
     int tal = generator.Next(1,21);
     enemyhp-=tal;
+    enemyhp = Math.Max(0, enemyhp);
     Console.WriteLine($"{p1} deals {tal} damage to the enemy");
 
     int dmg = generator.Next(1,21);
     playerhp-=dmg;
+    playerhp = Math.Max(0, playerhp);
     Console.WriteLine($"{p2} deals {dmg} damage to {p1}");
 
     Console.WriteLine("Press enter to start new round");
@@ -30,9 +32,21 @@ while (playerhp > 0 && enemyhp > 0)
 
 }
 
+if (playerhp == 0 && enemyhp == 0)
+{
+    Console.WriteLine("Tie");
+}
+else if (playerhp == 0)
+{
+    Console.WriteLine("You Lose");
+}
+else
+{
+    Console.WriteLine("Congratulations, You Win");
+}
+
+Console.WriteLine($"\n{p1}: {playerhp}hp   {p2}: {enemyhp}hp");
 
 
-
-
-Console.WriteLine("Press enter to close the game");
+Console.WriteLine("\nPress enter to close the game");
 Console.ReadLine();
