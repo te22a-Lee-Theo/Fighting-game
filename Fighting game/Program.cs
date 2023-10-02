@@ -1,4 +1,7 @@
-﻿Console.WriteLine("P1 enter your name");
+﻿Console.WriteLine("Welcome to Swords and Sandals budget version");
+Thread.Sleep(1000);
+
+Console.WriteLine("P1 enter your name");
 string p1 = Console.ReadLine();
 
 
@@ -14,7 +17,7 @@ Random generator = new Random();
 
 while (playerhp > 0 && enemyhp > 0)
 {
-    Console.WriteLine($"{p1}: {playerhp}hp   {p2}: {enemyhp}hp\n\n");
+    Console.WriteLine($"{p1}: {playerhp}hp   {p2}: {enemyhp}hp\n");
 
     Console.WriteLine("Press enter to attack.");
     Console.ReadLine();
@@ -28,10 +31,9 @@ while (playerhp > 0 && enemyhp > 0)
     playerhp-=dmg;
     playerhp = Math.Max(0, playerhp);
     Console.WriteLine($"{p2} deals {dmg} damage to {p1}\n");
-
-    
-
 }
+
+Thread.Sleep(500);
 
 if (playerhp == 0 && enemyhp == 0)
 {
@@ -49,5 +51,5 @@ else
 Console.WriteLine($"\n{p1}: {playerhp}hp   {p2}: {enemyhp}hp");
 
 
-Console.WriteLine("\nPress enter to close the game");
-Console.ReadLine();
+Console.WriteLine("\nPress any key to close the game");
+Console.ReadKey();
